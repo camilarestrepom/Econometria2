@@ -28,7 +28,7 @@ Sin embargo, para muchas series económicas deseamos modelar la relación entre 
 
 Empezamos con el modelo dinámico con variables independientes más sencillo.
 
-Por simplicidad de notación, miraremos el caso con una sola variable independiente $z_t$. En la practica suele haber más de una variable, pero en los casos que veremos a continuación la extensión a modelos más generales es sencilla. 
+Por simplicidad de notación, miraremos el caso con una sola variable independiente $z_t$. En la práctica suele haber más de una variable, pero en los casos que veremos a continuación la extensión a modelos más generales es sencilla. 
 
 #
 
