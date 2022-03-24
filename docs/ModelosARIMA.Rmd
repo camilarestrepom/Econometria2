@@ -39,6 +39,7 @@ Como vimos cuando miramos el paseo aleatorio, necesitamos que $|\phi|<1$, bajo e
                  & =   \phi^2 E[(\phi x_{t-3} + \varepsilon_{t-2})]  +  \phi E[ \varepsilon_{t-1}] +  E(\varepsilon_t)
 \end{align}
 
+Es importante recalcar que, a cada componente de la ecuación de $x_t$ se remplaza por rezago, lo cual se conoce como iterar hacia atras.
 #
 
 Si seguimos iterando hacia atrás obtenemos 
@@ -152,7 +153,7 @@ Como vimos previamente $\gamma_j = E[x_t x_{t-j}]$, por lo tanto
     \gamma_j = \phi \gamma_{j-1}
 \end{equation}
 
-resolvemos entonces para $\gamma_0$, $\gamma_1$ y generalizamos para $\gamma_j$. Es fácil ver que $\gamma_0$ es $Var(x)_{t})$
+resolvemos entonces para $\gamma_0$, $\gamma_1$ y generalizamos para $\gamma_j$. Es fácil ver que $\gamma_0$ es $Var(x_t)$
 
 #
 
@@ -456,6 +457,8 @@ Ahora, estimamos la auto-covarianza $\gamma_j$ del proceso,
             & (\varepsilon_{t-j} - \theta_1 \varepsilon_{t-j-1} - \theta_2 \varepsilon_{t-j-2} - \dots - \theta_q \varepsilon_{t-j-q})] \\
 \end{align}    
 
+
+
 #
 
 Veamos para el caso de $\gamma_1$,
@@ -489,6 +492,8 @@ Entonces, en este caso obtendríamos,
 \begin{align}
      \gamma_2  & = - \theta_2 \sigma^2 +  \theta_1\theta_3 \sigma^2 + \dots +  \theta_{q-2}\theta_q \sigma^2 \\
 \end{align}
+
+Nota: es importante recordar que con esto se resume un proceso extenso y esta es la razón por la cual $theta_3$ no aprece en el proceso inicial pero se encuentra en $gamma_2$
     
 #
 
@@ -772,7 +777,7 @@ Por lo tanto el ARMA(p,q) se puede expresar como,
 
 #
 
-Si existen dos raíces iguales dentro del circulo unidad, digamos $\lambda_1 = \delta_q$ podemos expresar el procesos como un ARMA(p-1,q-1),
+Si existen dos raíces iguales dentro del circulo unidad, digamos $\lambda_1 = \delta_q$ podemos expresar el proceso como un ARMA(p-1,q-1),
 
 \begin{align}
      (1-\lambda_2 L) \dots (1-\lambda_p L) x_t = \\
@@ -789,9 +794,9 @@ Se pueden presentar problemas de sobre-parametrización. Esto puede ser solucion
 
 
 
-La idea es minimizar el criterio, que por lo general tienen la forma de 
+La idea es **minimizar** el criterio, que por lo general tienen la forma de 
 \begin{equation}
-    - \text{bondad de ajuste} + \text{penalización}
+   - \text{bondad de ajuste} + \text{penalización}
 \end{equation}
 
 Sea $MV$ la máxima verosimilitud, $T$ el número de observaciones y $k$ el número de parámetros. 
